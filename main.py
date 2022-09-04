@@ -3,7 +3,7 @@
 
 import pygame as pg
 from player import Player
-from voxel_renderer import VoxelRenderer
+from voxel_renderer import VoxelRender
 
 
 
@@ -14,7 +14,7 @@ class App:
         self.screen = pg.display.set_mode(self.res, pg.SCALED)
         self.clock = pg.time.Clock()
         self.player = Player()
-        self.voxelRenderer = VoxelRenderer(self)
+        self.voxelRenderer = VoxelRender(self)
 
     def update(self):
         self.player.update();
