@@ -1,4 +1,3 @@
-
 #The overall game loop
 
 import pygame as pg
@@ -10,22 +9,19 @@ from voxel_renderer import VoxelRender
 class App:
     def __init__(self):
         self.res = self.width, self.height = (800, 450)
-        #we can double the ressolution with pg.SCALED but at the hardware level; this will save us resources in further calculations
         self.screen = pg.display.set_mode(self.res, pg.SCALED)
         self.clock = pg.time.Clock()
         self.player = Player()
-        self.voxelRenderer = VoxelRender(self)
+        self.voxel_render = VoxelRender(self)
 
     def update(self):
-        self.player.update();
-        self.voxelRenderer.update();
-        
-    
+        self.player.update()
+        self.voxel_render.update()
+
     def draw(self):
-        self.voxelRenderer.draw();
-        pg.display.flip();
-        
-    
+        self.voxel_render.draw()
+        pg.display.flip()
+
     def run(self):
         while True:
             self.update()
@@ -36,7 +32,6 @@ class App:
             pg.display.set_caption(f'FPS: {self.clock.get_fps()}')
 
 
-
 if __name__ == '__main__':
-    app = App();
-    app.run();
+    app = App()
+    app.run()

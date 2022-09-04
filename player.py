@@ -1,13 +1,13 @@
-
-#player class that will allow the player to move around the map
+#player module that controls movement and camera view
 
 import pygame as pg
 import numpy as np
 import math
 
+
 class Player:
-    def __init__(self) -> None:
-        self.pos = np.array([0.0], dtype = float)
+    def __init__(self):
+        self.pos = np.array([0, 0], dtype=float)
         self.angle = math.pi / 4
         self.height = 270
         self.pitch = 40
@@ -24,20 +24,21 @@ class Player:
             self.pitch += self.vel
         if pressed_key[pg.K_DOWN]:
             self.pitch -= self.vel
-        
+
         #left and right view
         if pressed_key[pg.K_LEFT]:
             self.angle -= self.angle_vel
         if pressed_key[pg.K_RIGHT]:
             self.angle += self.angle_vel
 
-        #up and down height
+        #up and down movement
         if pressed_key[pg.K_q]:
             self.height += self.vel
         if pressed_key[pg.K_e]:
             self.height -= self.vel
 
-        #wasd movement
+
+        #wasd player movement
         if pressed_key[pg.K_w]:
             self.pos[0] += self.vel * cos_a
             self.pos[1] += self.vel * sin_a
