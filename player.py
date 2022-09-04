@@ -15,4 +15,38 @@ class Player:
         self.vel = 3
 
     def update(self):
-        pass
+        sin_a = math.sin(self.angle)
+        cos_a = math.cos(self.angle)
+
+        pressed_key = pg.key.get_pressed()
+        #up and down view
+        if pressed_key[pg.K_UP]:
+            self.pitch += self.vel
+        if pressed_key[pg.K_DOWN]:
+            self.pitch -= self.vel
+        
+        #left and right view
+        if pressed_key[pg.K_LEFT]:
+            self.angle -= self.angle_vel
+        if pressed_key[pg.K_RIGHT]:
+            self.angle += self.angle_vel
+
+        #up and down height
+        if pressed_key[pg.K_q]:
+            self.height += self.vel
+        if pressed_key[pg.K_e]:
+            self.height -= self.vel
+
+        #wasd movement
+        if pressed_key[pg.K_w]:
+            self.pos[0] += self.vel * cos_a
+            self.pos[1] += self.vel * sin_a
+        if pressed_key[pg.K_s]:
+            self.pos[0] -= self.vel * cos_a
+            self.pos[1] -= self.vel * sin_a
+        if pressed_key[pg.K_a]:
+            self.pos[0] += self.vel * sin_a
+            self.pos[1] -= self.vel * cos_a
+        if pressed_key[pg.K_d]:
+            self.pos[0] -= self.vel * sin_a
+            self.pos[1] += self.vel * cos_a
