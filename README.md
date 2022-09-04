@@ -7,4 +7,7 @@ On the other hand, voxels, volumetric pixels, are essentially a 3-D pixel. Objec
 
 This project utilizes Python and the Pygame, numba, and numpy libraries to implement ray casting. Ray casting is capable of transforming a limited form of data into a three-dimensional projection with the help of tracing rays from the view point into the viewing volume. The main principle behind ray casting is that rays can be cast and traced in groups based on certain geometric constraints. In ray casting, a ray from the pixel through the camera is obtained and the intersection of all objects in the picture is computed. Next, the pixel value from the closest intersection is obtained and is further set as the base for the projection. 
 
-To run this project, simply clone or downlad this repositiory and run 
+To run this project, simply clone or downlad this repositiory and run main.py
+
+To interact with the environment, use the wasd keys to move around, q and e to adjust your height, and the arrow keys to adjust your view. 
+![Screen Shot 2022-09-04 at 4 52 41 PM](https://user-images.githubusercontent.com/64037087/188333225-1284f5d2-afb3-4cc9-928f-ead4fef42f4c.jpg)
