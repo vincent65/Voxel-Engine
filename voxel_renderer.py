@@ -47,7 +47,7 @@ def ray_casting(screen_array, player_pos, player_angle, player_height, player_pi
                         y_buffer[num_ray] = min(height_on_screen, screen_height)
                         first_contact = True
 
-                    # remove mirror bug
+                    # remove mirror bug by making negative values of the projection to zero
                     if height_on_screen < 0:
                         height_on_screen = 0
 
