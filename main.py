@@ -6,14 +6,15 @@ from player import Player
 from voxel_renderer import VoxelRenderer
 
 
+
 class App:
     def __init__(self):
         self.res = self.width, self.height = (800, 450)
-        #we can double the ressolution with pg.SCALED but at the same time make it more resouce intensive on the hardware
+        #we can double the ressolution with pg.SCALED but at the hardware level; this will save us resources in further calculations
         self.screen = pg.display.set_mode(self.res, pg.SCALED)
         self.clock = pg.time.Clock()
         self.player = Player()
-        self.voxelRenderer = VoxelRenderer();
+        self.voxelRenderer = VoxelRenderer(self)
 
     def update(self):
         self.player.update();
